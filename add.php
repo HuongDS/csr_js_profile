@@ -41,6 +41,8 @@
 <!DOCTYPE html>
 <html>
 
+<title>111574d6</title>
+    
 <body>
 
     <h1>Adding Profile for <?php if (isset($_SESSION['name'])) {
