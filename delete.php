@@ -32,7 +32,7 @@
 
     }
     
-    if (!isset($_GET['profile_id'])) {
+    if (!isset($_POST['profile_id'])) {
         $_SESSION['error'] = "Could not load profile";
         header("Location: index.php");
         return;
@@ -63,6 +63,7 @@
     <title>Huong Dang 111574d6</title>
      <h1>Deleteing Profile </h1>
 <body>
+     <h1>Deleting Profile</h1>
     <?php 
         if (isset($_SESSION['error'])) {
             echo "<p style='color: red'>".$_SESSION['error']."</p>";
@@ -79,7 +80,7 @@
 
     <form method="POST">
         <p>
-            <input type="hidden" name="profile_id " value="<? $_GET['profile_id'] ?>" />
+            <input type="hidden" name="profile_id" value="<? $_GET['profile_id'] ?>" />
         </p>
         <input type="submit" name="delete" value="Delete" />
         <input type="submit" name="cancel" value="Cancel" />
