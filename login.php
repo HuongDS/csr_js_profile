@@ -44,7 +44,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
         </p>
 
         <p>Password:
-            <input type="text" name="pass" id="pass" />
+            <input type="password" name="pass" id="pass" />
         </p>
 
         <button type="submit" onclick="return sub();">Log In</button>
