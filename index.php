@@ -37,13 +37,13 @@
             echo "<a href='login.php'>Please log in</a>";
         }
 
-        $statement = $pdo->query("SELECT * FROM profile");
+        $statement = $pdo->query("SELECT * FROM Profile");
 
         $row = $statement->fetch(PDO::FETCH_ASSOC);
 
         if ($row != false) {
 
-            $statement = $pdo->query("SELECT * FROM profile");
+            $statement = $pdo->query("SELECT * FROM Profile");
             
             echo "<table border='1'>
             <tbody>
@@ -62,8 +62,8 @@
                 echo "<td>".$row['email']."</td>";
                 if (isset($_SESSION['name'])) {
                     echo "<td>
-                        <a href='edit.php?profile_id=".$row['profile_id']."'>Edit </a>
-                        <a href='delete.php?profile_id=".$row['profile_id']."'>Delete</a>
+                        <a href='edit.php?Profile_id=".$row['Profile_id']."'>Edit </a>
+                        <a href='delete.php?Profile_id=".$row['Profile_id']."'>Delete</a>
                     </td>";
                 }
                 echo "</tr>";
