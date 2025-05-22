@@ -21,9 +21,9 @@
             return; 
         }
 
-        // $sql = "INSERT INTO profile (user_id, first_name, last_name, email, headline, summary) VALUES (:uid, :fn, :ln, :em, :he, :su)";
+        // $sql = "INSERT INTO Profile (user_id, first_name, last_name, email, headline, summary) VALUES (:uid, :fn, :ln, :em, :he, :su)";
 
-        $sql = "UPDATE profile SET first_name = :fn, last_name = :ln, email = :em , headline = :he, summary = :su WHERE profile_id = :pi";
+        $sql = "UPDATE Profile SET first_name = :fn, last_name = :ln, email = :em , headline = :he, summary = :su WHERE profile_id = :pi";
 
         $statement = $pdo->prepare($sql);
 
@@ -48,7 +48,7 @@
         return;
     }
     
-    $statement = $pdo->prepare("SELECT * FROM profile WHERE profile_id = :profile_id");
+    $statement = $pdo->prepare("SELECT * FROM Profile WHERE profile_id = :profile_id");
     
     $statement->execute(array(
         ":profile_id" => $_GET["profile_id"],
