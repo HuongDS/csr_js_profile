@@ -29,7 +29,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>111574d6</title>
+   <title>Huong Dang 111574d6</title>
 </head>
 <body>
     <h1>Please Log In</h1>
