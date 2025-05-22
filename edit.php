@@ -69,15 +69,11 @@
 ?>
 <!DOCTYPE html>
 <html>
-
     <title>Huong Dang 111574d6</title>
-
-<body>
-
-    <h1>Editing Profile for <?php if (isset($_SESSION['name'])) {
+<h1>Editing Profile for <?php if (isset($_SESSION['name'])) {
         echo $_SESSION['name']; 
     } ?> </h1>
-
+<body>
     <?php 
         if (isset($_SESSION['error'])) {
             echo "<p style='color: red'>".$_SESSION['error']."</p>";
