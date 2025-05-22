@@ -1,15 +1,14 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>111574d6</title>
 </head>
-
 <?php 
-    require "pdo.php";
-
-    session_start();
-
+    require "pdo.php"; 
     if (isset($_POST['email']) && isset($_POST['pass'])) {
         $sql = "SELECT * FROM users WHERE email = :email AND password = :pass";
 
