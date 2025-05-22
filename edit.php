@@ -71,6 +71,8 @@
 <!DOCTYPE html>
 <html>
 
+    <title>111574d6</title>
+
 <body>
 
     <h1>Editing Profile for <?php if (isset($_SESSION['name'])) {
