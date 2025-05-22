@@ -58,6 +58,7 @@
     $headline = htmlentities($row["headline"]);
     $summary = htmlentities($row["summary"]);
 ?>
+
 <!DOCTYPE html>
 <html>
     <title>Huong Dang 111574d6</title>
