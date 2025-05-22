@@ -1,40 +1,36 @@
 <?php
-    session_start();
-?>
+session_start();
+require "pdo.php";
 
+if (isset($_POST['email']) && isset($_POST['pass'])) {
+    $sql = "SELECT * FROM users WHERE email = :email AND password = :pass";
+
+    $statement = $pdo->prepare($sql);
+
+    $statement->execute(array(
+        ":email" => $_POST['email'],
+        ":pass" => $_POST['pass']
+    ));
+
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($row == false) {
+        $_SESSION['error'] = "Incorrect Password";
+        header("Location: login.php");
+        return;
+    }
+
+    $_SESSION['user_id'] = $row['user_id'];
+    $_SESSION['name'] = $row['name'];
+    header("Location: index.php");
+    return;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>111574d6</title>
 </head>
-<?php 
-    require "pdo.php"; 
-    if (isset($_POST['email']) && isset($_POST['pass'])) {
-        $sql = "SELECT * FROM users WHERE email = :email AND password = :pass";
-
-        $statement = $pdo->prepare($sql);
-
-        $statement->execute(array(
-            ":email" => $_POST['email'],
-            ":pass" => $_POST['pass']
-        ));
-
-        $row = $statement->fetch(PDO::FETCH_ASSOC);
-
-        if ($row == false) {
-            $_SESSION['error'] = "Incorrect Password";
-            header("Location: login.php");
-            return;
-        }
-
-        $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['name'] = $row['name'];
-        header("Location: index.php");
-        return;
-    }
-
-?>
-
 <body>
     <h1>Please Log In</h1>
     <?php 
@@ -44,7 +40,6 @@
         }
     ?>
     <form method="post">
-
         <p>Email:
             <input type="text" name="email" id="email" />
         </p>
@@ -54,7 +49,6 @@
         </p>
 
         <button type="submit" onclick="return sub();">Log In</button>
-
     </form>
 
     <script>
@@ -82,5 +76,4 @@
     }
     </script>
 </body>
-
 </html>
