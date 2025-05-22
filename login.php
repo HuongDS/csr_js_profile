@@ -1,7 +1,6 @@
 <?php
-session_start();
 require "pdo.php";
-
+session_start();
 if (isset($_POST['email']) && isset($_POST['pass'])) {
     $sql = "SELECT * FROM users WHERE email = :email AND password = :pass";
 
@@ -30,8 +29,6 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 <html>
 <head>
    <title>Huong Dang 111574d6</title>
-</head>
-<body>
     <h1>Please Log In</h1>
     <?php 
         if (isset($_SESSION['error'])) {
@@ -39,6 +36,8 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
             unset($_SESSION['error']);
         }
     ?>
+</head>
+<body>
     <form method="post">
         <p>Email:
             <input type="text" name="email" id="email" />
