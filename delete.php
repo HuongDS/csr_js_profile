@@ -41,27 +41,41 @@ $summary = htmlentities($row["summary"]);
 ?>
 
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Huong Dang 111574d6</title>
+   <title>Huong Dang 111574d6</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+         crossorigin="anonymous">
 </head>
 <body>
-    <h1>Deleting Profile</h1>
+   <h1>Alan Dsilva's Resume Registry</h1>
+   <p>
+       <b>Note:</b> Your implementation should retain data across multiple
+       logout/login sessions. This sample implementation clears all its
+       data on logout - which you should not do in your implementation.
+   </p>
 
-    <?php 
-    if (isset($_SESSION['error'])) {
-        echo "<p style='color: red'>".$_SESSION['error']."</p>";
-        unset($_SESSION['error']);
-    }
-    ?>
+   <a href="logout.php">Logout</a><br>
 
-    <p>First Name: <?= $profile_id ?></p>
-    <p>Last Name: <?= $last_name ?></p>
+   <table border="1">
+       <tbody>
+           <tr> 
+               <th>Name</th>
+               <th>Headline</th>
+               <th>Action</th>
+           </tr>
+           <tr>
+               <td>42986856712 Deist</td>
+               <td>blah@example.com</td>
+               <td>
+                   <a href="edit.php?profile_id=5">Edit</a>
+                   <a href="delete.php?profile_id=5">Delete</a>
+               </td>
+           </tr>
+           <!-- Các dòng khác -->
+       </tbody>
+   </table>
 
-    <form method="POST">
-        <input type="hidden" name="profile_id" value="<?= htmlentities($_GET['profile_id']) ?>" />
-        <input type="submit" name="delete" value="Delete" />
-        <input type="submit" name="cancel" value="Cancel" />
-    </form>
+   <a href="add.php">Add New Entry</a>
 </body>
-</html>
+
