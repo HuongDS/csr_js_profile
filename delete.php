@@ -7,24 +7,24 @@ if (isset($_POST['cancel'])) {
     return;
 }
 
-if (isset($_POST['delete']) && isset($_POST['first_name'])) {
-    $sql = "DELETE FROM Profile WHERE first_name = :pi";
+if (isset($_POST['delete']) && isset($_POST['profile_id'])) {
+    $sql = "DELETE FROM Profile WHERE profile_id = :pi";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':pi' => $_POST['first_name']]);
+    $stmt->execute([':pi' => $_POST['profile_id']]);
 
     $_SESSION['success'] = "Profile deleted";
     header("Location: index.php");
     return;
 }
 
-if (!isset($_GET['first_name'])) {
+if (!isset($_GET['profile_id'])) {
     $_SESSION['error'] = "Could not load profile";
     header("Location: index.php");
     return;
 }
 
-$stmt = $pdo->prepare("SELECT * FROM Profile WHERE first_name = :first_name");
-$stmt->execute([':first_name' => $_GET["first_name"]]);
+$stmt = $pdo->prepare("SELECT * FROM Profile WHERE profile_id = :profile_id");
+$stmt->execute([':profile_id' => $_GET["profile_id"]]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($row === false) {
@@ -33,7 +33,7 @@ if ($row === false) {
     return;
 }
 
-$first_name = htmlentities($row["first_name"]);
+$profile_id = htmlentities($row["profile_id"]);
 $last_name = htmlentities($row["last_name"]);
 $email = htmlentities($row["email"]);
 $headline = htmlentities($row["headline"]);
@@ -55,11 +55,11 @@ $summary = htmlentities($row["summary"]);
     }
     ?>
 
-    <p>First Name: <?= $first_name ?></p>
+    <p>First Name: <?= $profile_id ?></p>
     <p>Last Name: <?= $last_name ?></p>
 
     <form method="POST">
-        <input type="hidden" name="first_name" value="<?= htmlentities($_GET['first_name']) ?>" />
+        <input type="hidden" name="profile_id" value="<?= htmlentities($_GET['profile_id']) ?>" />
         <input type="submit" name="delete" value="Delete" />
         <input type="submit" name="cancel" value="Cancel" />
     </form>
