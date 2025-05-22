@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    session_start(); // dong 16 - vi tri cu
+   
 
 <head>
    <title>111574d6</title>
@@ -11,9 +11,10 @@
 </head>
 
 <?php 
+session_start(); // dong 16 - vi tri cu
     require "pdo.php";
 
-    
+     
 
 ?>
 
