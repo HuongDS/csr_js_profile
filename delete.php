@@ -51,7 +51,9 @@
 ?>
 <!DOCTYPE html>
 <html>
-
+<head>
+    <title>Huong Dang 111574d6</title>
+</head>
 <body>
 
     <h1>Deleteing Profile </h1>
