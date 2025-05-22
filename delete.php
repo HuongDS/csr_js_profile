@@ -41,6 +41,7 @@ $summary = htmlentities($row["summary"]);
 ?>
 
 <!DOCTYPE html>
+<html>
 <head>
    <title>Huong Dang 111574d6</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -78,4 +79,4 @@ $summary = htmlentities($row["summary"]);
 
    <a href="add.php">Add New Entry</a>
 </body>
-
+</html>
