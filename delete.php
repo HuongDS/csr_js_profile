@@ -61,11 +61,8 @@
 <!DOCTYPE html>
 <html>
     <title>Huong Dang 111574d6</title>
-
+     <h1>Deleteing Profile </h1>
 <body>
-
-    <h1>Deleteing Profile </h1>
-
     <?php 
         if (isset($_SESSION['error'])) {
             echo "<p style='color: red'>".$_SESSION['error']."</p>";
