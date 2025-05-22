@@ -18,7 +18,7 @@
             return;
         }
 
-        $sql = "INSERT INTO profile (user_id, first_name, last_name, email, headline, summary) VALUES (:uid, :fn, :ln, :em, :he, :su)";
+        $sql = "INSERT INTO Profile (user_id, first_name, last_name, email, headline, summary) VALUES (:uid, :fn, :ln, :em, :he, :su)";
 
         $statement = $pdo->prepare($sql);
 
