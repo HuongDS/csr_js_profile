@@ -2,12 +2,12 @@
 require_once "pdo.php";
 session_start();
 
-if (isset($_POST['cancel'])) {
+if (isset($_POST['Cancel'])) {
     header("Location: index.php");
     return;
 }
 
-if (isset($_POST['delete']) && isset($_POST['profile_id'])) {
+if (isset($_POST['Delete']) && isset($_POST['profile_id'])) {
     $sql = "DELETE FROM Profile WHERE profile_id = :pi";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':pi' => $_POST['profile_id']]);
