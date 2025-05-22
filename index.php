@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
    <h1>Alan Dsilva's Resume Registry</h1>
+   <p>
+            <b>Note:</b> Your implementation should retain data across multiple
+            logout/login sessions. This sample implementation clears all its
+            data on logout - which you should not do in your implementation.
+        </p>
 </head>
 <body>
     <?php
