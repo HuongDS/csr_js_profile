@@ -28,7 +28,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Huong Dang 111574d6 cd6da2a3</title>
+  <title>Huong Dang 111574d6 cd6da2a3 b3d29210</title>
     <h1>Please Log In</h1>
     <?php 
         if (isset($_SESSION['error'])) {
