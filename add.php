@@ -40,7 +40,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>Huong Dang 111574d6 cd6da2a3</title>
+<title>Huong Dang 111574d6 cd6da2a3 b3d29210</title>
     <h1>Adding Profile for <?php if (isset($_SESSION['name'])) {
         echo $_SESSION['name']; 
     } ?> </h1>
